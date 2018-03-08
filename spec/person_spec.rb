@@ -65,4 +65,11 @@ describe Person do
     end
   end
 
+  context 'outside of initialize' do
+    it 'will raise an error instead of setting' do
+      expect { avi.name = "Avidor" }.to raise_error(NameError)
+      expect { spencer.glove_size = spencer_attributes[:glove_size] }.to raise_error(NameError)
+    end
+  end
+
 end
